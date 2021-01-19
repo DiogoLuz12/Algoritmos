@@ -30,3 +30,7 @@ while True:
     else:
         print('ERRO! Escolha uma opção correta: ')
     sleep(2)
+
+
+
+    vamos ver se está a dar bem
