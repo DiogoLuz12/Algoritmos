@@ -22,7 +22,7 @@ def lerint(msg):
             return n
 
 def leridade():
-    aux = input("digite idade: ")
+    aux = input("Digite a sua data de nascimento: ")
 
     aux = aux.split("/")
     idade = datetime.date.today().year - int(aux[2])
