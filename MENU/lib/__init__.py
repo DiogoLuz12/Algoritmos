@@ -55,5 +55,3 @@ def menu (lista):
     print(linha())
     opc = lerint('Opção: ')
     return opc
-
-.
