@@ -1,3 +1,6 @@
+import datetime
+
+
 def lerEmail(email):
     import re
     email = input("Digite o seu email: ")
@@ -17,6 +20,22 @@ def lerint(msg):
             continue
         else:
             return n
+
+def leridade():
+    aux = input("digite idade: ")
+
+    aux = aux.split("/")
+    idade = datetime.date.today().year - int(aux[2])
+    if datetime.date.today().month >= int(aux[1]):
+        if datetime.date.today().day >= int(aux[0]):
+            idade = idade
+
+        else:
+            idade = idade - 1
+    else:
+        idade = idade - 1
+
+    return idade
 
 
 def linha(tam=10):

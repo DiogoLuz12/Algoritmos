@@ -16,14 +16,14 @@ while True:
     elif resposta == 2: #Adicionar um novo utilizador
         cab('Novo Utilizador:')
         nome = str(input("Nome:"))
-        idade = lerint('Idade: ')
+        idade = leridade()
         email = lerEmail('Email: ')
 
         registo(arq,nome,idade,email)
     elif resposta == 3:
-        cab('Opc 3')
+        edit()
     elif resposta == 4:
-        cab('Opc 4')
+        remover()
     elif resposta == 5:
         cab('A terminar o programa...')
         break
