@@ -1,3 +1,10 @@
+from MENU.lib.arquivo import registo, leridade, lerEmail, cab
+from admin.menu_admin import menu_admin
+
+
+arq = 'utilizadores.txt'
+
+
 granted = False
 def grant():
     global granted
@@ -6,26 +13,27 @@ def grant():
 
 def login(name,password):
     success = False
-    file = open("detalhes.txt","r")
-    for i in file:
-        a,b = i.split(",")
-        b = b.strip()
-        if(a==name and b==password):
-            success=True
-            break
+    admin = False
+    file = open("utilizadores.txt","r")
+    if name == "Gustavo" and password == "couves" or name == "Diogo" and password == "couves":
+        success = True
+        admin = True
+
+    else:
+        for i in file:
+            a = i.split(";")
+            if(a[0]==name and a[1]==password):
+                success=True
+                break
     file.close()
-    if (success):
-        print("Login aceite!")
+    if (success) and admin:
+        print("Login aceite! (admin)")
         grant()
+        menu_admin()
+    elif (success) and not admin:
+        print("Login aceite! (utilizador)")
     else:
         print("Password ou nome de utilizador errado! ")
-
-
-def register(name,password):
-    file = open("utilizadores.txt","a")
-    file.write("\n"+name+","+password)
-    file.close()
-    grant()
 
 def access(option):
     if(option == "login"):
@@ -38,25 +46,14 @@ def access(option):
             print("Detalhes do user")
             print("Username: ", name)
     else:
-        print("Escreva o seu username e a sua password para se registar: ")
-        name = input("Escreva o nome de utilizador: ")
-        password = input("Escreva a sua password:")
-        register(name,password)
+        cab('Novo Utilizador:')
+        nome = str(input("Nome: "))
+        password = input("pass: ")
+        idade = leridade()
+        email = lerEmail('Email: ')
+
+        registo(arq, nome, password, idade, email)
 
 
-def begin():
-    print("---Bem-Vindo---")
-    option = input("Login or register (login,reg): ")
-    if(option !="login" and option!="reg"):
-
-        begin()
-    else:
-        if (option =="login"):
-            login()
-        if (option =="reg"):
-          name = input("Username: ")
-          password = input("Password: ")
-          register(name,password)
 
 
-begin()

@@ -30,18 +30,18 @@ def lerUtil(nome):
             dado = linha.split(';')
             dado[1] = dado[1].replace('\n','')
 
-            print(f'{dado[0]:<10}{dado[1]:>3} anos     Email: {dado[2]:>3} ')
+            print(f'{dado[0]:<10}{dado[2]:>3} anos     Email: {dado[3]:>3} ')
     finally:
         a.close()
 
-def registo(arq,nome='erro',idade=0,email='erro'):
+def registo(arq,nome='erro', password = "erro", idade=0, email='erro'):
     try:
         a = open(arq, 'at')
     except:
         print('ERRO!')
     else:
         try:
-            a.write(f'{nome};{idade};{email} \n')
+            a.write(f'{nome}; {password}; {idade}; {email} \n')
         except:
             print('ERRO!')
         else:
@@ -74,7 +74,7 @@ def edit():
 
                     aux[0] = novo_nome
                     utilizadores.pop(pos)
-                    utilizadores.insert(pos,aux[0]+";"+aux[1]+";"+aux[2])
+                    utilizadores.insert(pos,aux[0]+";"+aux[2]+";"+aux[3])
 
                 elif opc == 2:
                     nova_data = input("digite uma nova data: ")
@@ -93,7 +93,7 @@ def edit():
 
                     aux[1] = idade
                     utilizadores.pop(pos)
-                    utilizadores.insert(pos,aux[0]+";"+aux[1]+";"+aux[2])
+                    utilizadores.insert(pos,aux[0]+";"+aux[2]+";"+aux[3])
 
                 elif opc == 3:
                     novo_email = input("digite um novo email: ")
@@ -101,7 +101,7 @@ def edit():
 
                     aux[2] = novo_email
                     utilizadores.pop(pos)
-                    utilizadores.insert(pos,aux[0]+";"+aux[1]+";"+aux[2])
+                    utilizadores.insert(pos,aux[0]+";"+aux[2]+";"+aux[3])
 
 
     with open ("utilizadores.txt","w") as f:
