@@ -34,14 +34,14 @@ def lerUtil(nome):
     finally:
         a.close()
 
-def registo(arq,nome='erro', password = "erro", idade=0, email='erro'):
+def registo(arq,nome='erro',password = "erro",idade=0,email='erro'):
     try:
         a = open(arq, 'at')
     except:
         print('ERRO!')
     else:
         try:
-            a.write(f'{nome}; {password}; {idade}; {email} \n')
+            a.write(f'{nome};{password};{idade};{email}\n')
         except:
             print('ERRO!')
         else:

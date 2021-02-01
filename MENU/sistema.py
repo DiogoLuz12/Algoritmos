@@ -26,7 +26,7 @@ while True:
             idade = leridade()
             email = lerEmail('Email: ')
 
-            registo(arq, nome, password, idade, email)
+            registo(arq,nome,password,idade,email)
 
         if (option =="3"):
             break

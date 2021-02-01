@@ -10,7 +10,7 @@ arq = 'utilizadores.txt'
 def menu_admin(admin):
     while True:
         resposta = menu(
-            ['Arquivo de utilizadores', 'Novo utilizador', 'Editar utilizador', 'Remover utilizador', 'Programa normal', 'Sair do programa'])
+            ['Arquivo de utilizadores','Novo utilizador','Editar utilizador','Remover utilizador','Programa normal','Sair do programa'])
         if resposta == 1:  # Listagem dos utilizadores
             lerUtil(arq)
 

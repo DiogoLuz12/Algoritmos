@@ -54,7 +54,7 @@ def access(option):
         idade = leridade()
         email = lerEmail('Email: ')
 
-        registo(arq, nome, password, idade, email)
+        registo(arq,nome,password,idade,email)
 
 
 
