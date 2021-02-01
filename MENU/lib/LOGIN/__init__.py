@@ -1,5 +1,6 @@
 from MENU.lib.arquivo import registo, leridade, lerEmail, cab
 from admin.menu_admin import menu_admin
+from MENU.mensagens import Login
 
 
 arq = 'utilizadores.txt'
@@ -29,9 +30,10 @@ def login(name,password):
     if (success) and admin:
         print("Login aceite! (admin)")
         grant()
-        menu_admin()
+        menu_admin(name)
     elif (success) and not admin:
         print("Login aceite! (utilizador)")
+        Login(name)
     else:
         print("Password ou nome de utilizador errado! ")
 
