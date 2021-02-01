@@ -16,7 +16,7 @@ def login(name,password):
     success = False
     admin = False
     file = open("utilizadores.txt","r")
-    if name == "Gustavo" and password == "couves" or name == "Diogo" and password == "couves":
+    if name == "Gustavo" and password == "couves" or name == "Diogo" and password == "couves" or name == "Ricardo" and password == "couves":
         success = True
         admin = True
 
